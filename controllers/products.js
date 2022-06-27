@@ -21,14 +21,11 @@ const getAllProducts = async (req, res) => {
     if (sort === 'new') {
         result = result.sort({'_id': -1})
     }
-    if (sort === 'old') {
-        result = result.sort({'_id': 1})
-    }
     const page = Number(req.query.page) || 1;
-    const limit = Number(req.query.limit) || 10;
+    const limit = Number(req.query.limit) || 15;
     const skip = (page - 1) * limit;
 
-    result = result.skip(skip).limit(limit);
+    result = result.skip(skip).limit(limit).select('-description');
 
     const products = await result;
     res.status(200).json({ products, nbHits: totalLength, totalPages: totalPages })
@@ -40,7 +37,7 @@ const getProduct = async (req,res) => {
         const {id:productID} = req.params;
         const task = await Product.findOne({_id: productID})
         if(!task) {
-            return res.status(404).json({msq: `No task with id: ${productID}`})
+            return res.status(404).json({msq: `No todo with id: ${productID}`})
         }
 
         res.status(200).json(task);
@@ -50,23 +47,39 @@ const getProduct = async (req,res) => {
 };
 
 const deleteProduct = async (req,res) => {
-    console.log('delete product!')
     try {
         const {id: productID} = req.params;
         const task = await Product.findOneAndDelete({_id: productID});
 
         if(!task) {
-            return res.status(404).json({msq: `No task with id: ${taskID}`})
+            return res.status(404).json({msq: `No todo with id: ${taskID}`})
         }
         res.status(200).json({task: null, status: 'success'})
     } catch (error) {
         res.status(500).json({msq: error})
     }
-    // res.status(200).json({msq: 'all cool!'})
+};
+
+const updateProduct = async (req, res) => {
+    try {
+        const {id: productID} = req.params;
+
+        const task = await Product.findByIdAndUpdate({_id: productID}, req.body, {
+            new: true, runValidators: true
+        });
+
+        if (!task) {
+            return res.status(404).json({msq: `No todo with id: ${productID}`})
+        }
+        res.status(200).json({task})
+    } catch (error) {
+        res.status(500).json({msq: error})
+    }
 };
 
 module.exports = {
     getAllProducts,
     getProduct,
-    deleteProduct
+    deleteProduct,
+    updateProduct
 };

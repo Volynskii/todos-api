@@ -18,11 +18,6 @@ app.use(express.json());
 app.use(cors());
 
 // routes
-app.get('/', (req,res) => {
-res.send('<h1>Store API </h1>' +
-    '<a href="/api/v1/products">products route</a>')
-});
-
 app.use('/api/v1/products',productsRouter);
 
 // products route
