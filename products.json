@@ -1,98 +1,14 @@
 [
   {
-    "title": "Тестовая задача № 1",
-    "description": "",
-    "priority": "normal",
-    "tags": ["design","development"]
-  },
-  {
-    "title": "Тестовая задача № 2",
-    "description": "",
-    "priority": "high",
-    "tags": ["design"]
-  },
-  {
-    "title": "Тестовая задача № 3",
+    "title": "Тестовая задача № 30",
     "description": "",
     "priority": "high",
     "tags": ["research"]
   },
   {
-    "title": "Тестовая задача № 4",
+    "title": "Тестовая задача № 31",
     "description": "",
     "priority": "normal",
-    "tags": ["design","development","research"]
-  },
-  {
-    "title": "Тестовая задача № 5",
-    "description": "",
-    "priority": "normal",
-    "tags": ["design"]
-  },
-  {
-    "title": "Тестовая задача № 6",
-    "description": "",
-    "priority": "high",
-    "tags": ["design","development"]
-  },
-  {
-    "title": "Тестовая задача № 7",
-    "description": "",
-    "priority": "high",
-    "tags": ["research"]
-  },
-  {
-    "title": "Тестовая задача № 8",
-    "description": "",
-    "priority": "high",
-    "tags": ["design"]
-  },
-  {
-    "title": "Тестовая задача № 9",
-    "description": "",
-    "priority": "high",
-    "tags": ["development","research"]
-  },
-  {
-    "title": "Тестовая задача № 10",
-    "description": "",
-    "priority": "high",
-    "tags": ["research"]
-  },
-  {
-    "title": "Тестовая задача № 11",
-    "description": "",
-    "priority": "high",
-    "tags": ["development"]
-  },
-  {
-    "title": "Тестовая задача № 12",
-    "description": "",
-    "priority": "normal",
-    "tags": ["research"]
-  },
-  {
-    "title": "Тестовая задача № 13",
-    "description": "",
-    "priority": "normal",
-    "tags": ["design","research"]
-  },
-  {
-    "title": "Тестовая задача № 14",
-    "description": "",
-    "priority": "high",
-    "tags": ["research"]
-  },
-  {
-    "title": "Тестовая задача № 15",
-    "description": "",
-    "priority": "normal",
-    "tags": ["design"]
-  },
-  {
-    "title": "Тестовая задача № 16",
-    "description": "",
-    "priority": "high",
-    "tags": ["design","research"]
+    "tags": []
   }
 ]
